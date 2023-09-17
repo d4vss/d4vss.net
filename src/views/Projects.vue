@@ -28,9 +28,9 @@ onMounted(async () => {
 });
 
 const projects = computed(() => {
-    return payload.value.filter((project) => {
-        return project.description;
-    });
+    return payload.value
+        .filter((project) => !project.fork)
+        .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 });
 
 const main = ref(null);

@@ -56,10 +56,11 @@ onMounted(async () => {
 });
 
 const projects = computed(() => {
-  return payload.value.filter((project) => {
-    return project.description;
-  }).slice(0, 4);
+    return payload.value
+        .filter((project) => !project.fork)
+        .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 });
+
 </script>
 
 <style scoped>
