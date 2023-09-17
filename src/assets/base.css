@@ -1,0 +1,56 @@
+:root {
+  --color-text: #e3edf2;
+  --color-bg-primary: #161616;
+  --color-secondary: #0c1419;
+  --color-accent: #b0ccda;
+  --color-shadow: #999;
+  --font-special: 'Panton', sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-text: #05090a;
+    --color-bg-primary: #e3edf2;
+    --color-primary: #487f99;
+    --color-secondary: #d2e2ea;
+    --color-accent: #4d88a3;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  opacity: 0.75;
+  font-weight: normal;
+  margin: 10px;
+}
+
+@font-face {
+  font-family: 'Panton';
+  src: url('./Panton-BlackCaps.woff2');
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-bg-primary);
+  /* transition: color 0.5s, background-color 0.5s; */
+  line-height: 1.6;
+  
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

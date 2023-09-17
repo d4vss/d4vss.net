@@ -1,0 +1,45 @@
+.projects {
+    margin-left: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project {
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+    backdrop-filter: blur(3px);
+    height: 100%;
+    transition: box-shadow 0.25s ease-in-out;
+}
+
+.project:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+}
+
+.project .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project .top h3 {
+    margin: 0;
+}
+
+.project .link {
+    display: inline-block;
+}
+
+.project p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .project {
+        width: 100%;
+    }
+}

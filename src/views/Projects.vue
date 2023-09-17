@@ -1,0 +1,48 @@
+<template>
+    <main ref="main">
+        <h1 class="panton" style="margin-bottom: 5rem;">Projects</h1>
+
+        <div class="projects" ref="projectss">
+            <div class="project" v-for="project in projects" :key="project.id">
+                <div class="top">
+                    <h3 class="panton shadow">{{ project.name }}</h3>
+                    <RouterLink class="link panton shadow" :to="`/projects/${project.name}`">
+                        View
+                    </RouterLink>
+                </div>
+                <p>{{ project.description }}</p>
+            </div>
+        </div>
+    </main>
+</template>
+
+<script setup>
+import { ref, onMounted, computed } from 'vue';
+import { gsap } from 'gsap';
+
+const payload = ref([]);
+
+onMounted(async () => {
+    const response = await fetch('https://api.github.com/users/d4vss/repos');
+    payload.value = await response.json();
+});
+
+const projects = computed(() => {
+    return payload.value.filter((project) => {
+        return project.description;
+    });
+});
+
+const main = ref(null);
+
+onMounted(() => {
+    gsap.from(main.value.children, {
+        duration: 1,
+        y: -25,
+        opacity: 0,
+        stagger: 0.35,
+        ease: 'Power4.easeOut',
+    });
+});
+
+</script>

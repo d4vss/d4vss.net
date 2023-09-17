@@ -1,0 +1,58 @@
+<template>
+    <Nav>
+        <RouterLink to="/">
+            <img class="logo" src="/logo.png">
+        </RouterLink>
+
+        <div class="panton links">
+            <RouterLink to="/about">
+                About
+            </RouterLink>
+            <RouterLink to="/projects">
+                Projects
+            </RouterLink>
+        </div>
+    </Nav>
+</template>
+
+<script setup>
+import { onMounted } from 'vue';
+import { RouterLink } from 'vue-router';
+import { gsap } from 'gsap';
+
+onMounted(() => {
+    gsap.from('a', {
+        duration: 1.5,
+        y: -50,
+        opacity: 0,
+        ease: 'Power4.easeOut',
+    });
+});
+</script>
+
+<style scoped>
+Nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    height: 67.5px;
+}
+
+.links {
+    display: flex;
+    margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    .links {
+        margin-left: 0.5rem;
+    }
+    .logo {
+        height: 50px;
+    }
+}
+</style>
