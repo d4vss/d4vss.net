@@ -15,9 +15,9 @@
             <div class="project" v-for="project in projects" :key="project.id">
                 <div class="top">
                     <h3 class="panton shadow">{{ project.name }}</h3>
-                    <RouterLink class="link panton shadow" :href="project.html_url">
+                    <a class="link panton shadow" target=_blank :href="project.html_url">
                         View
-                    </RouterLink>
+                    </a>
                 </div>
                 <p>{{ project.description }}</p>
             </div>
