@@ -2,7 +2,6 @@
   <span class="gradient-bg"></span>
   <main ref="main">
     <h1 class="panton shadow">Hi, I'm d4vss.</h1>
-
     <h2 class="panton" style="margin-top: 7.5rem;">About me</h2>
     <p class="desc" style="margin-block: 1.5rem 2rem;">I'm a 16-year-old with a passion for programming, especially in Python. Currently, I'm attending a higher technical college department focused on IT. I'm eager to expand my horizons by exploring languages like JavaScript and C#.</p>
     
@@ -16,7 +15,7 @@
             <div class="project" v-for="project in projects" :key="project.id">
                 <div class="top">
                     <h3 class="panton shadow">{{ project.name }}</h3>
-                    <RouterLink class="link panton shadow" :to="`/projects/${project.name}`">
+                    <RouterLink class="link panton shadow" :href=project.updated_at>
                         View
                     </RouterLink>
                 </div>
@@ -64,6 +63,15 @@ const projects = computed(() => {
 </script>
 
 <style scoped>
+.pfp {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
 .desc {
   max-width: 50%;
 }
