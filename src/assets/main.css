@@ -43,17 +43,17 @@ a:hover {
 }
 
 .shadow {
-  filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.75));
+  filter: drop-shadow(0 0 1rem var(--color-shadow));
 }
 
 .link {
-  border: 2px solid white;
+  border: 2px solid var(--color-accent);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   transition: background-color 0.5s ease;
 }
 
 .link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--color-shadow-small);
   text-decoration: none;
 }
