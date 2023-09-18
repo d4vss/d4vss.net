@@ -1,5 +1,8 @@
 <template>
     <main ref="main">
+        <h1 class="panton shadow" style="margin-bottom: 5rem;">About me</h1>
+
+        <h2 class="panton shadow"> My skills:</h2>
     </main>
 </template>
 

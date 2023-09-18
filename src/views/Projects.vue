@@ -1,6 +1,6 @@
 <template>
     <main ref="main">
-        <h1 class="panton" style="margin-bottom: 5rem;">Projects</h1>
+        <h1 class="panton shadow" style="margin-bottom: 5rem;">Projects</h1>
 
         <div class="projects" ref="projectss">
             <div class="project" v-for="project in projects" :key="project.id">

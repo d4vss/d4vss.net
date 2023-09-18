@@ -54,7 +54,7 @@ main {
     position: absolute;
     bottom: 0;
     width: 95%;
-    height: 2.5rem;            
+    height: 2rem;            
 }
 .left {
     margin-left: 1rem;
