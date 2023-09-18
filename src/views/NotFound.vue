@@ -38,6 +38,7 @@ main {
 }
 
 .title {
+    text-align: center;
     text-transform: uppercase;
 }
 </style>
