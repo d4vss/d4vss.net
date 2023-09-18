@@ -48,11 +48,10 @@ Nav {
 }
 
 @media (max-width: 768px) {
-    .links {
-        margin-left: 0.5rem;
-    }
-    .logo {
-        height: 50px;
+    Nav {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
 }
 </style>
