@@ -36,7 +36,6 @@ onMounted(async () => {
     status_.value.style.backgroundColor = colors[data.data.discord_status];
 })
 
-console.log(image_url)
 onMounted(() => {
     gsap.from(footer.value, {
         duration: 1.5,
