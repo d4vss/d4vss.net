@@ -15,13 +15,13 @@ const router = createRouter({
         title: 'Home',
         metaTags: [
           {
-            name: 'description',
-            content: "davs'page"
+            name: "og:title",
+            content: "davs' page"
           },
           {
-            property: 'og:description',
-            content: "davs'page"
-          },
+            name: "og:image",
+            content: "https://d4vss.net/logo.png"
+          }
         ]
       }
     },
