@@ -86,7 +86,7 @@ async function updateSpotify() {
   spotify_image.value.src = payload_json.data.spotify.album_art_url;
 }
 
-setInterval(updateSpotify, 1000);
+setInterval(updateSpotify, 30000);
 
 </script>
 
