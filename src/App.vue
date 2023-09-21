@@ -1,12 +1,12 @@
 <template>
-  <content>
-    <Header>
+  <main>
+    <header>
       <Navbar />
-    </Header>
+    </header>
     <main>
       <RouterView />
     </main>
-  </content>
+  </main>
 
   <Footer />
 </template>

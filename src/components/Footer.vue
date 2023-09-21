@@ -7,16 +7,22 @@
                     <img :src="image_url">
                     <span ref="status_" class="status"></span>
                 </a>
-                <a href="https://github.com/d4vss/" target=_blank class="fa-brands fa-github fa-xl"></a>
-                <a href="https://instagram.com/d4v.sy" target=_blank class="fa-brands fa-instagram fa-xl"></a>
+                <a href="https://github.com/d4vss/" target=_blank><i class="fa-brands fa-github fa-xl"></i></a>
+                <a href="https://instagram.com/d4v.sy" target=_blank><i class="fa-brands fa-instagram fa-xl"></i></a>
             </div>
         </div>
     </main>
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted } from 'vue';
 import { gsap } from 'gsap';
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faGithub, faInstagram)
 
 const footer = ref(null);
 const image_url = ref(null);

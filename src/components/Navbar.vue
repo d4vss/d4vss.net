@@ -1,5 +1,5 @@
 <template>
-    <Nav>
+    <nav>
         <RouterLink to="/">
             <img class="logo" src="/logo.png">
         </RouterLink>
@@ -12,7 +12,7 @@
                 Projects
             </RouterLink>
         </div>
-    </Nav>
+    </nav>
 </template>
 
 <script setup>

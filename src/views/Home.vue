@@ -4,7 +4,7 @@
     <h2 class="panton" style="margin-top: 5rem;">About me</h2>
 
     <div class="spotify" ref="spotify">
-      <img ref="spotify_image" class="fa-spin">
+      <img ref="spotify_image">
       <p class="shadow">Listening to <a ref="song" target=_blank></a> by <a ref="artist" target=_blank></a>.</p>
     </div>
 
@@ -122,6 +122,16 @@ setInterval(updateSpotify, 30000);
   height: 2.5rem;
   margin-inline: 0.5rem;
   border-radius: 50%;
+  animation: infinite linear 5s spin;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .spotify p {
