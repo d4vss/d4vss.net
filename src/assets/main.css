@@ -59,3 +59,8 @@ a:hover {
   background-color: var(--color-shadow-small);
   text-decoration: none;
 }
+
+.page-title {
+  margin-bottom: 5rem;
+  text-align: center;
+}

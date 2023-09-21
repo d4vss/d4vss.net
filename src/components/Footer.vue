@@ -18,12 +18,6 @@
 import { ref, onMounted } from 'vue';
 import { gsap } from 'gsap';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-library.add(faGithub, faInstagram)
-
 const footer = ref(null);
 const image_url = ref(null);
 const status_ = ref(null);
@@ -77,7 +71,7 @@ main {
     align-items: center;
 }
 
-.socials a {
+.socials a, i {
     text-decoration: none;
 }
 

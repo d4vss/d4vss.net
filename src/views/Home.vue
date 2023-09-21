@@ -74,6 +74,10 @@ const spotify_image = ref(null);
 async function updateSpotify() {
   const payload = await fetch('https://api.lanyard.rest/v1/users/627448648833171457');
   const payload_json = await payload.json();
+  while (payload_json.data.spotify == null) {
+    await new Promise(r => setTimeout(r, 1000));
+  }
+  
   if (payload_json.data.spotify == null) {
     spotify.value.style.display = "none";
     return;

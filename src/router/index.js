@@ -11,19 +11,6 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
-      meta: {
-        title: 'Home',
-        metaTags: [
-          {
-            name: "og:title",
-            content: "davs' page"
-          },
-          {
-            name: "og:image",
-            content: "https://d4vss.net/logo.png"
-          }
-        ]
-      }
     },
     {
       path: '/about',
