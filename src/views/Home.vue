@@ -88,6 +88,7 @@ async function updateSpotify() {
 
 setInterval(updateSpotify, 30000);
 
+updateSpotify();
 </script>
 
 <style scoped>
