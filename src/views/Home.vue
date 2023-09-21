@@ -5,7 +5,7 @@
 
     <div class="spotify" ref="spotify">
       <img ref="spotify_image">
-      <p class="shadow">Listening to <a ref="song" target=_blank></a> by <a ref="artist" target=_blank></a>.</p>
+      <p class="shadow">Listening to <a ref="song" target=_blank></a> by <span ref="artist"></span>.</p>
     </div>
 
     <p class="desc" style="margin-block: 1.5rem 2rem;">I'm a 16-year-old with a passion for programming, especially in Python. Currently, I'm attending a higher technical college department focused on IT. I'm eager to expand my horizons by exploring languages like JavaScript and C#.</p>
@@ -85,7 +85,7 @@ async function updateSpotify() {
   spotify.value.style.display = "flex";
   spotify_image.value.style.display = "block";
   song.value.innerHTML = payload_json.data.spotify.song;
-  song.value.href = payload_json.data.spotify.song_url;
+  song.value.href = "https://open.spotify.com/track/" + payload_json.data.spotify.track_id;
   artist.value.innerHTML = payload_json.data.spotify.artist;
   spotify_image.value.src = payload_json.data.spotify.album_art_url;
 }
@@ -143,13 +143,13 @@ updateSpotify();
   font-weight: 200;
 }
 
-.spotify a {
+.spotify a, span {
   font-weight: 900;
+  opacity: 1;
+  margin: 0;
 }
 
 .spotify a  {
-  opacity: 1;
-  margin: 0;
   cursor: pointer;
 }
 </style>
