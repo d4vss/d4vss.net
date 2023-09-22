@@ -16,7 +16,6 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: () => import('../views/About.vue'),
-      // redirect: { name: 'not-found' },
     },
     {
       path: '/projects',
@@ -27,6 +26,11 @@ const router = createRouter({
       path: '/:pathMatch(.*)*',
       name: 'not-found',
       component: () => import('../views/NotFound.vue')
+    },
+    {
+      path: '/file/:id',
+      name: 'file',
+      component: () => import('../views/File.vue')
     }
   ]
 })

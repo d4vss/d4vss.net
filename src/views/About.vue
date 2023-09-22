@@ -25,14 +25,12 @@ import { gsap } from 'gsap';
 const main = ref(null);
 
 const skills = [
-    { name: 'Lorem ipsum.', value: '90%' },
-    { name: 'Lorem ipsum.', value: '80%' },
-    { name: 'Lorem ipsum.', value: '70%' },
-    { name: 'Lorem ipsum.', value: '60%' },
-    { name: 'Lorem ipsum.', value: '50%' },
-    { name: 'Lorem ipsum.', value: '40%' },
-    { name: 'Lorem ipsum.', value: '30%' },
-    { name: 'Lorem ipsum.', value: '20%' },
+    { name: 'Python', value: '90%' },
+    { name: 'HTML', value: '95%' },
+    { name: 'C#', value: '15%' },
+    { name: 'VueJS', value: '20%' },
+    { name: 'GSAP', value: '10%' },
+    { name: 'Photoshop', value: '10%' }
 ]
 
 onMounted(() => {
