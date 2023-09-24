@@ -1,6 +1,6 @@
 <template>
     <main ref="main">
-        <h1 class="panton">{{ file }} ({{  }})</h1>
+        <h1 class="panton">{{ file }} ({{ size }})</h1>
         <a :href="url" class="link">Download</a>
     </main>
 </template>
@@ -27,17 +27,22 @@ export default {
         const route = useRoute();
         const file = ref(null);
         const url = ref(null);
+        const size = ref(null);
 
         onMounted(async () => {
             const response = await fetch(`https://dl.d4vss.net/${route.params.id}/url`);
             const splitText = (await response.text()).split('/');
             file.value = splitText[splitText.length - 1];
             url.value = `https://dl.d4vss.net/${route.params.id}/download`;
+
+            const response2 = await fetch(`https://dl.d4vss.net/${route.params.id}/size`);
+            size.value = await response2.text();
         });
 
         return {
             file,
             url,
+            size,
         }
     }
 }
