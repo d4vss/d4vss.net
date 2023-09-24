@@ -22,6 +22,8 @@ onMounted(() => {
   });
 });
 
+import router from '@/router';
+
 export default {
     setup() {
         const route = useRoute();
@@ -31,6 +33,9 @@ export default {
 
         onMounted(async () => {
             const response = await fetch(`https://dl.d4vss.net/${route.params.id}/url`);
+            const code = await response.status;
+            if (code == 404)
+                return router.push({ name: 'not-found' });
             const splitText = (await response.text()).split('/');
             file.value = splitText[splitText.length - 1];
             url.value = `https://dl.d4vss.net/${route.params.id}/download`;
