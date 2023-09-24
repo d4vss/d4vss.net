@@ -1,6 +1,7 @@
 <template>
     <main ref="main">
-        <h1 class="panton shadow">File not found. (SHAREX)</h1>
+        <h1 class="panton">{{ file }} ({{  }})</h1>
+        <a :href="url" class="link">Download</a>
     </main>
 </template>
 
@@ -25,13 +26,18 @@ export default {
     setup() {
         const route = useRoute();
         const file = ref(null);
+        const url = ref(null);
 
         onMounted(async () => {
-            
+            const response = await fetch(`https://dl.d4vss.net/${route.params.id}/url`);
+            const splitText = (await response.text()).split('/');
+            file.value = splitText[splitText.length - 1];
+            url.value = `https://dl.d4vss.net/${route.params.id}/download`;
         });
 
         return {
             file,
+            url,
         }
     }
 }
@@ -40,5 +46,17 @@ export default {
 <style scoped>
 main {
     text-align: center;
+}
+
+a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-family: 'Panton';
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
 }
 </style>
