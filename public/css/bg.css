@@ -1,0 +1,21 @@
+.bg {
+    position: absolute;
+    width: 100%;
+    height: max-content;
+  }
+  
+  .bg-mobile {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: max-content;
+  }
+  @media (max-width: 768px) {
+    .bg {
+        display: none;
+    }
+    .bg-mobile {
+        display: block;
+  
+    }
+  }
