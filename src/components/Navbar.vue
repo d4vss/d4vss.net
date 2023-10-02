@@ -1,7 +1,7 @@
 <template>
     <nav>
         <RouterLink to="/">
-            <img class="logo" src="/logo.png">
+            <img class="logo" src="/logo.gif">
         </RouterLink>
 
         <div class="panton links">
@@ -35,7 +35,7 @@ Nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 0rem;
 }
 
 .logo {
