@@ -1,6 +1,6 @@
 <template>
   <main ref="main">
-    <h1 class="panton shadow">Hi, I'm d4vss.</h1>
+    <h1 class="panton shadow gradient">Hi, I'm d4vss.</h1>
     <h2 class="panton" style="margin-top: 5rem;">About me</h2>
 
     <div class="spotify" ref="spotify">
@@ -8,7 +8,7 @@
       <p class="shadow">Listening to <a ref="song" target=_blank></a> by <span ref="artist"></span>.</p>
     </div>
 
-    <p class="desc" style="margin-block: 1.5rem 2rem;">I'm a 16-year-old with a passion for programming, especially in Python. Currently, I'm attending a higher technical college department focused on IT. I'm eager to expand my horizons by exploring languages like JavaScript and C#.</p>
+    <p class="desc" style="margin-block: 1.5rem 2rem;">I'm a {{ age }}-year-old with a passion for programming, especially in Python. Currently, I'm attending a higher technical college department focused on IT. I'm eager to expand my horizons by exploring languages like JavaScript and C#.</p>
     
     <RouterLink class="link panton shadow" to="/about">
       Read More!
@@ -70,6 +70,7 @@ const spotify = ref(null);
 const song = ref(null);
 const artist = ref(null);
 const spotify_image = ref(null);
+const age = ref(new Date().getFullYear() - 2007);
 
 async function updateSpotify() {
   const payload = await fetch('https://api.lanyard.rest/v1/users/627448648833171457');
@@ -96,6 +97,26 @@ updateSpotify();
 </script>
 
 <style scoped>
+.gradient {
+  background: linear-gradient(to right, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  background-size: 200% 200%;
+  animation: gradient 10s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 .pfp {
   position: relative;
   width: 100px;
