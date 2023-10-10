@@ -1,6 +1,6 @@
 <template>
   <main ref="main">
-    <h1 class="panton shadow gradient">Hi, I'm d4vss.</h1>
+    <h1 class="panton shadow gradient">Hi, I'm <span class="name">d4vss</span>.</h1>
     <h2 class="panton" style="margin-top: 5rem;">About me</h2>
 
     <div class="spotify" ref="spotify">
@@ -116,6 +116,29 @@ updateSpotify();
 		background-position: 0% 50%;
 	}
 }
+
+.name {
+  transition: all 0.5s ease;
+  animation: 3s spread 1s;
+  position: relative;
+}
+
+@keyframes spread {
+  0% {
+    letter-spacing: 0rem;
+  }
+  50%, 80% {
+    letter-spacing: .3rem;
+  }
+  100% {
+    letter-spacing: 0rem;
+  }
+  
+}
+.name:hover {
+  letter-spacing: .25rem;
+}
+
 
 .pfp {
   position: relative;
