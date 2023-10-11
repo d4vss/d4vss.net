@@ -23,6 +23,11 @@ const router = createRouter({
       component: () => import('../views/Projects.vue')
     },
     {
+      path: '/generate',
+      name: 'gen',
+      component: () => import('../views/Gen.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'not-found',
       component: () => import('../views/NotFound.vue')
