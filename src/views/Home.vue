@@ -1,6 +1,6 @@
 <template>
   <main ref="main">
-    <h1 class="panton shadow gradient">Hi, I'm <span class="name">d4vss</span>.</h1>
+    <h1 class="panton shadow gradient">Hi, I'm d4vss.</h1>
     <h2 class="panton" style="margin-top: 5rem;">About me</h2>
 
     <div class="spotify" ref="spotify">
