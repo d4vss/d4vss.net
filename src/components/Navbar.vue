@@ -1,13 +1,10 @@
 <template>
     <nav>
         <RouterLink to="/">
-            <img class="logo" src="/logo.gif">
+            <img class="logo" src="https://cdn.d4vss.net/ukla4">
         </RouterLink>
 
         <div class="panton links">
-            <RouterLink to="/about">
-                About
-            </RouterLink>
             <RouterLink to="/projects">
                 Projects
             </RouterLink>

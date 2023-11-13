@@ -7,7 +7,6 @@
       <RouterView />
     </main>
   </main>
-
   <Footer />
 </template>
 

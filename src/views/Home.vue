@@ -9,10 +9,7 @@
     </div>
 
     <p class="desc" style="margin-block: 1.5rem 2rem;">I'm a {{ age }}-year-old with a passion for programming, especially in Python. Currently, I'm attending a higher technical college department focused on IT. I'm eager to expand my horizons by exploring languages like JavaScript and C#.</p>
-    
-    <RouterLink class="link panton shadow" to="/about">
-      Read More!
-    </RouterLink>
+
     <div>
       <h2 class="panton" style="margin-block: 7.5rem 2rem;">My Projects</h2>
 
