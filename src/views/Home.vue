@@ -60,7 +60,7 @@ const projects = computed(() => {
     return payload.value
         .filter((project) => !project.fork)
         .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
-        .slice(0, 4);
+        .slice(0, 3);
 });
 
 const spotify = ref(null);
