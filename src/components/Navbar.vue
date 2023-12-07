@@ -1,7 +1,7 @@
 <template>
     <nav>
         <RouterLink to="/">
-            <img class="logo" src="https://cdn.d4vss.net/ukla4">
+            <img class="logo" src="/logo.gif">
         </RouterLink>
 
         <div class="panton links">

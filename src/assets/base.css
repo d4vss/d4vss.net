@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 @font-face {
   font-family: 'Panton';
-  src: url('https://cdn.d4vss.net/iq325qyrx');
+  src: url('/Panton-BlackCaps.woff2');
 }
 
 body {
