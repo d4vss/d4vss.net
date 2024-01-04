@@ -8,7 +8,6 @@
                     <span ref="status_" class="status"></span>
                 </a>
                 <a href="https://github.com/d4vss/" target=_blank><i class="fa-brands fa-github fa-xl"></i></a>
-                <a href="https://instagram.com/d4v.sy" target=_blank><i class="fa-brands fa-instagram fa-xl"></i></a>
             </div>
         </div>
     </main>
