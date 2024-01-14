@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DiscordStatus from '../components/DiscordStatus.vue';
+import GithubProjects from '../components/GithubProjects.vue';
+import '../assets/github-lang-colors.css';
+import { Icon } from 'astro-icon/components';
+---
+
+<Layout title="Davs' Corner" description="Take a look at my corner of the internet, where I share my passions and discoveries.">
+	<main class="adjustSize text-white/90 leading-7 tracking-wide">
+		<DiscordStatus client:load/>
+
+		<div class="w-full flex items-center gap-2 lg:gap-3 mt-10 mb-4 text-lg font-medium opacity-80">
+			<span class="h-0.5 w-[10%] lg:w-[4%] bg-white/90"></span>
+			<h4 class="whitespace-nowrap mb-1 text-xl">About me</h4>
+			<span class="h-0.5 w-full bg-white/90"></span>
+		</div>
+		<div class="child:mt-5 !text-white/60 text-lg">
+			<p>
+				Hey, I'm d4vss, a 17-year-old developer from Europe. Currently, my main focus is on web development. 
+				In my free time, I'm immersed in coding, constantly expanding my knowledge. 
+			</p>
+			</div>
+		
+		<div class="w-full flex items-center gap-2 lg:gap-3 mt-10 mb-4 text-lg font-medium opacity-80">
+			<span class="h-0.5 w-[10%] lg:w-[4%] bg-white/90"></span>
+			<h4 class="whitespace-nowrap mb-1 text-xl capitalize">Open source projects</h4>
+			<span class="h-0.5 w-full bg-white/90"></span>
+		</div>
+		<GithubProjects client:load />
+
+		<div class="w-full flex items-center gap-2 lg:gap-3 mt-10 mb-4 text-lg font-medium opacity-80">
+			<span class="h-0.5 w-[10%] lg:w-[4%] bg-white/90"></span>
+			<h4 class="whitespace-nowrap mb-1 text-xl capitalize">Technologies & Frameworks</h4>
+			<span class="h-0.5 w-full bg-white/90"></span>
+		</div>
+		<div class="grid grid-cols-1 lg:grid-cols-3 auto-rows-auto gap-7">
+			<div>
+				<h3>Programming Languages</h3>
+				<div class="flex flex-wrap gap-2 child:w-8 child:h-8 text-white/60 mt-1">
+					<Icon name="mdi:language-javascript"/>
+					<Icon name="mdi:language-html5"/>
+					<Icon name="mdi:language-css3"/>
+					<Icon name="mdi:language-python"/>
+					<Icon name="mdi:language-csharp"/>
+					<Icon name="mdi:language-java"/>
+					<Icon name="mdi:language-php"/>
+				</div>
+			</div>
+			<div>
+				<h3>Web Development</h3>
+				<div class="flex flex-wrap gap-2 child:w-8 child:h-8 text-white/60 mt-1">
+					<Icon name="simple-icons:astro"/>
+					<Icon name="simple-icons:nuxtdotjs"/>
+					<Icon name="mdi:vuejs"/>
+					<Icon name="simple-icons:express"/>
+					<Icon name="simple-icons:flask"/>
+					<Icon name="simple-icons:wordpress"/>
+				</div>
+			</div>
+			<div>
+				<h3>OS Experience</h3>
+				<div class="flex flex-wrap gap-2 child:w-8 child:h-8 text-white/60 mt-1">
+					<Icon name="simple-icons:windows11"/>
+					<Icon name="mdi:ubuntu"/>
+				</div>
+			</div>
+			<div>
+				<h3>Server Technologies</h3>
+				<div class="flex flex-wrap gap-2 child:w-8 child:h-8 text-white/60 mt-1">
+					<Icon name="mdi:ubuntu"/>
+					<Icon name="simple-icons:nginx"/>
+					<Icon name="simple-icons:pterodactyl"/>
+					<Icon name="simple-icons:raspberrypi"/>
+				</div>
+			</div>
+			<div>
+				<h3>Tools</h3>
+				<div class="flex flex-wrap gap-2 child:w-8 child:h-8 text-white/60 mt-1">
+					<Icon name="mdi:microsoft-visual-studio-code"/>
+					<Icon name="mdi:microsoft-visual-studio"/>
+					<Icon name="simple-icons:intellijidea"/>
+				</div>
+			</div>
+			<div>
+				<h3>Miscellaneous </h3>
+				<div class="flex flex-wrap gap-2 child:w-8 child:h-8 text-white/60 mt-1">
+					<Icon name="simple-icons:mariadb"/>
+					<Icon name="simple-icons:sqlite"/>
+					<Icon name="simple-icons:adobephotoshop"/>
+					<Icon name="simple-icons:microsoftword"/>
+				</div>
+			</div>
+		</div>
+
+		<div class="w-full flex items-center gap-2 lg:gap-3 mt-10 mb-4 text-lg font-medium opacity-80">
+			<span class="h-0.5 w-[10%] lg:w-[4%] bg-white/90"></span>
+			<h4 class="whitespace-nowrap mb-1 text-xl capitalize">Contact me</h4>
+			<span class="h-0.5 w-full bg-white/90"></span>
+		</div>
+		<div class="flex flex-wrap gap-5 mb-16">
+			<p class="text-lg">You can reach me via <a href="https://discord.com/users/627448648833171457" target="_blank" class="underline">Discord</a>.</p>
+		</div>
+	</main>
+</Layout>

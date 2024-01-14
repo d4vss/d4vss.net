@@ -1,0 +1,59 @@
+---
+interface Props {
+	title: string;
+	description: string,
+}
+
+import Header from '../components/Header.astro';
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<meta property="og:title" content={title} />
+		<meta property="og:image" content="https://d4vss.net/favicon.ico" />
+		<meta property="og:description" content={description} />
+		<link rel="icon" type="image/ico" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="relativem-0 p-0">
+		<Header/>
+		<slot class="pb-20"/>
+	</body>
+</html>
+
+<style is:global>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	:root {
+		--accent: #1d1d1d;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: radial-gradient(
+			circle at 10% 20%, 
+			rgb(0, 0, 0) 0%, 
+			rgb(64, 64, 64) 90.2%
+		); 
+	}
+	html {
+		color: #ffffff;
+		font-family: system-ui, sans-serif;
+		background-color: #000000;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+	.adjustSize {
+		@apply my-0 mx-auto mt-10 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-4xl 2xl:max-w-5xl;
+	}
+</style>
