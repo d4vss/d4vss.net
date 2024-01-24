@@ -11,7 +11,7 @@ export default defineConfig({
       mdi: ['language-javascript', 'language-html5', 'language-css3', 'language-python', 'language-csharp', 'language-java', 'language-php', 'vuejs', 'ubuntu', 'microsoft-visual-studio-code', 'microsoft-visual-studio'],
       ph: ['planet-bold'],
       simple_icons: ['astro', 'nuxtdotjs', 'express', 'flask', 'wordpress', 'windows11', 'nginx', 'pterodactyl', 'raspberrypi', 'intellijidea'],
-      iconoir: ['repository']
+      octicon: ['repo-24']
     }
   })]
 });

@@ -1,0 +1,81 @@
+<script setup>
+import { ref, onMounted } from "vue";
+
+const userId = "627448648833171457";
+const apiUrl = `https://api.lanyard.rest/v1/users/${userId}`;
+const spotifyInfo = ref(null);
+const progress = ref(null);
+const currentTimestamp = ref(null);
+
+const fetchData = async () => {
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        if (data.success && data.data && data.data.spotify) {
+            spotifyInfo.value = {
+                track_id: data.data.spotify.track_id,
+                album: data.data.spotify.album,
+                album_art_url: data.data.spotify.album_art_url,
+                artist: data.data.spotify.artist,
+                song: data.data.spotify.song,
+                start: data.data.spotify.timestamps.start,
+                end: data.data.spotify.timestamps.end,
+            };
+            setTimeout(() => {
+                document.getElementById('player').style.opacity = '1';
+            }, 100);
+        }
+    } catch (error) {
+        
+    }
+};
+
+const updateProgress = () => {
+    if (progress.value && spotifyInfo.value) {
+        const currentTime = new Date().getTime();
+        const elapsedSeconds = Math.floor((currentTime - spotifyInfo.value.start) / 1000);
+        const totalSeconds = Math.floor((spotifyInfo.value.end - spotifyInfo.value.start) / 1000);
+
+        if (elapsedSeconds <= totalSeconds) {
+            const progressPercentage = (elapsedSeconds / totalSeconds) * 100;
+            progress.value.style.width = `${progressPercentage}%`;
+            
+            const timeElapsed = secondsToMinutesAndSeconds(Math.floor((currentTime - spotifyInfo.value.start) / 1000));
+            currentTimestamp.value.innerHTML = timeElapsed;
+        } else {
+            fetchData();
+        }
+    }
+};
+
+onMounted(() => {
+    fetchData();
+    updateProgress();
+
+    setInterval(() => {
+        updateProgress();
+    }, 900);
+
+    setInterval(() => {
+        fetchData();
+    }, 18000);
+});
+
+const secondsToMinutesAndSeconds = seconds => `${String(Math.floor(seconds / 60))}:${String(seconds % 60).padStart(2, '0')}`;
+</script>
+
+<template>
+    <div v-if="spotifyInfo" id="player" class="opacity-0 transition duration-300 delay-300 bg-white/80 drop-shadow-[0_15px_35px_rgba(100,100,100,0.7)] mt-32 p-0 rounded-sm lg:w-[400px] lg:mt-5">
+        <div class="px-4 py-2">
+            <img class="w-24 h-24 float-start -mt-14 top-0 left-1/2 -translate-x-1/2 absolute shadow-2xl" :src="spotifyInfo['album_art_url']" alt="">
+            <h5 class="text-black text-lg m-0 mt-10 block">{{ spotifyInfo['song'] }}<span class="text-xs font-semibold ml-1">by {{ spotifyInfo['artist'] }}</span></h5>
+        </div>
+        <div class="flex items-center justify-between text-black mb-4">
+            <span class="mx-4" ref="currentTimestamp"></span>
+            <div class="bg-black/20 bottom-0 w-full rounded-lg h-1 p-0 m-0">
+                <div ref="progress" class="h-full bg-black"></div>
+            </div>
+            <span class="mx-4">{{ secondsToMinutesAndSeconds(Math.floor((spotifyInfo['end'] - spotifyInfo['start']) / 1000)) }}</span>
+        </div>
+    </div>
+</template>

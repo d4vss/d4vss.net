@@ -2,13 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 import DiscordStatus from '../components/DiscordStatus.vue';
 import GithubProjects from '../components/GithubProjects.vue';
+import SpotifyStatus from '../components/SpotifyStatus.vue';
+
 import '../assets/github-lang-colors.css';
 import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Davs' Corner" description="Take a look at my corner of the internet, where I share my passions and discoveries.">
 	<main class="adjustSize text-white/90 leading-7 tracking-wide">
-		<DiscordStatus client:load/>
+		<div class="flex justify-between flex-col lg:flex-row">
+			<DiscordStatus client:load/>
+			<SpotifyStatus client:load/>
+		</div>
 
 		<div class="w-full flex items-center gap-2 lg:gap-3 mt-10 mb-4 text-lg font-medium opacity-80">
 			<span class="h-0.5 w-[10%] lg:w-[4%] bg-white/90"></span>
@@ -88,7 +93,6 @@ import { Icon } from 'astro-icon/components';
 					<Icon name="simple-icons:mariadb"/>
 					<Icon name="simple-icons:sqlite"/>
 					<Icon name="simple-icons:adobephotoshop"/>
-					<Icon name="simple-icons:microsoftword"/>
 				</div>
 			</div>
 		</div>

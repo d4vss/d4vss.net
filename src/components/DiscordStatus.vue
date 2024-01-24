@@ -17,13 +17,19 @@ const offline = computed(() => {
 });
 
 const lastUpdated = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+onMounted(() => {
+    document.getElementById('view').style.opacity = '1';
+})
 </script>
 
 <template>
-    <img v-if="avatar_url" :src="avatar_url" class="w-16 h-16 rounded-full">
-    <div v-else class="w-16 h-16"></div>
-    <h1 class="mt-2 mb-3">d4vss</h1>
-    <p class="!text-white/60 flex items-center m-0 p-0">
-        <span :class="'p-1.5 rounded-full inline mr-2 ' + (offline ? 'bg-neutral-600' : 'bg-green-500')"></span> {{ offline ? 'Offline' : 'Online' }} — {{ lastUpdated }}
-    </p>
+    <div id="view" class="opacity-0 duration-300 delay-300">
+        <img v-if="avatar_url" :src="avatar_url" class="w-16 h-16 rounded-full">
+        <div v-else class="w-16 h-16"></div>
+        <h1 class="mt-2 mb-3">d4vss</h1>
+        <p class="!text-white/60 flex items-center m-0 p-0">
+            <span :class="'p-1.5 rounded-full inline mr-2 ' + (offline ? 'bg-neutral-600' : 'bg-green-500')"></span> {{ offline ? 'Offline' : 'Online' }} — {{ lastUpdated }}
+        </p>
+    </div>
 </template>
