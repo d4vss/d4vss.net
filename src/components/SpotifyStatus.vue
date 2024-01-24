@@ -49,17 +49,17 @@ onMounted(() => {
 </script>
 
 <template>
-    <div v-if="spotifyInfo" id="player" class="opacity-0 transition duration-300 delay-300 bg-white/80 drop-shadow-[0_15px_35px_rgba(100,100,100,0.7)] mt-32 p-0 rounded-sm lg:w-[400px] lg:mt-5">
-        <div class="px-4 py-2">
-            <img class="w-24 h-24 float-start -mt-14 top-0 left-1/2 -translate-x-1/2 absolute shadow-2xl" :src="spotifyInfo.album_art_url" alt="">
-            <h5 class="text-black text-lg m-0 mt-10 block">{{ spotifyInfo.song }}<span class="text-xs font-semibold ml-1">by {{ spotifyInfo.artist }}</span></h5>
-        </div>
-        <div class="flex items-center justify-between text-black mb-4">
-            <span class="mx-4" ref="currentTimestamp"></span>
-            <div class="bg-black/20 bottom-0 w-full rounded-lg h-1 p-0 m-0">
-                <div ref="progress" class="h-full bg-black"></div>
+    <div v-if="spotifyInfo" id="player" class="flex justify-between opacity-0 transition duration-300 delay-300 border-2 border-solid border-white/60 drop-shadow-[0_15px_35px_rgba(100,100,100,0.7)] mt-32 p-0 rounded-[0.0625rem] lg:w-[400px] lg:mt-5 px-5 py-4">
+        <div class="flex flex-col justify-around">
+            <h5 class="text-lg block mt-4">{{ spotifyInfo.song }}<span class="text-xs font-semibold ml-1">by {{ spotifyInfo.artist }}</span></h5>
+            <div class="flex items-center justify-between mt-4 w-full">
+                <span class="mr-2" ref="currentTimestamp"></span>
+                <div class="bg-white/20 bottom-0 w-full rounded-xl h-1 p-0 m-0">
+                    <div ref="progress" class="h-full bg-white rounded-xl"></div>
+                </div>
+                <span class="ml-2" ref="finishedTimestamp"></span>
             </div>
-            <span class="mx-4" ref="finishedTimestamp"></span>
         </div>
+        <img class="w-24 h-24 shadow-2xl" :src="spotifyInfo.album_art_url" alt="">
     </div>
 </template>
