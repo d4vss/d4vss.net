@@ -49,8 +49,8 @@ onMounted(() => {
 </script>
 
 <template>
-    <div v-if="spotifyInfo" id="player" class="flex justify-between opacity-0 transition duration-300 delay-300 border-2 border-solid border-white/60 drop-shadow-[0_15px_35px_rgba(100,100,100,0.7)] mt-32 p-0 rounded-[0.0625rem] lg:w-[400px] lg:mt-5 px-5 py-4">
-        <div class="flex flex-col justify-around">
+    <div v-if="spotifyInfo" id="player" class="flex justify-between gap-5 opacity-0 transition duration-300 delay-300 border-2 border-solid border-white/60 drop-shadow-[0_15px_35px_rgba(100,100,100,0.7)] mt-8 p-0 rounded-[0.0625rem] lg:w-[420px] lg:mt-5 px-5 py-4">
+        <div class="flex flex-col justify-around w-full">
             <h5 class="text-lg block mt-4">{{ spotifyInfo.song }}<span class="text-xs font-semibold ml-1">by {{ spotifyInfo.artist }}</span></h5>
             <div class="flex items-center justify-between mt-4 w-full">
                 <span class="mr-2" ref="currentTimestamp"></span>
