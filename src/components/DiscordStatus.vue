@@ -2,25 +2,14 @@
 import { ref, onMounted, computed } from "vue";
 
 const lanyard_response = ref(null);
-const avatar_url = computed(() => {
-    return lanyard_response.value ? 'https://cdn.discordapp.com/avatars/627448648833171457/' + lanyard_response.value.data.discord_user.avatar : null;
-});
-
-onMounted(async () => {
-    lanyard_response.value = await fetch('https://api.lanyard.rest/v1/users/627448648833171457').then(async (response) => await response.json());
-});
-
-const offline = computed(() => {
-    if (lanyard_response.value === null) return false;
-
-    return lanyard_response.value.data.discord_status === "offline";
-});
-
+const avatar_url = computed(() => lanyard_response.value ? `https://cdn.discordapp.com/avatars/627448648833171457/${lanyard_response.value.data.discord_user.avatar}` : null);
+const offline = computed(() => lanyard_response.value?.data.discord_status === "offline");
 const lastUpdated = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 
-onMounted(() => {
+onMounted(async () => {
+    lanyard_response.value = await fetch('https://api.lanyard.rest/v1/users/627448648833171457').then(response => response.json());
     document.getElementById('view').style.opacity = '1';
-})
+});
 </script>
 
 <template>
