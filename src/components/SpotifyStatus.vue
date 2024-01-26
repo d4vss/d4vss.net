@@ -29,11 +29,11 @@ const updateProgress = () => {
         if (elapsedSeconds <= totalSeconds) {
             const percentage = (elapsedSeconds / totalSeconds) * 100;
             progress.value.style.width = `${percentage}%`;
-            currentTimestamp.value.innerHTML = `${Math.floor(elapsedSeconds / 60)}:${String(elapsedSeconds % 60).padStart(2, '0')}`;
+            currentTimestamp.value = `${Math.floor(elapsedSeconds / 60)}:${String(elapsedSeconds % 60).padStart(2, '0')}`;
             
             const totalDurationMinutes = Math.floor(totalSeconds / 60);
             const totalDurationSeconds = totalSeconds % 60;
-            finishedTimestamp.value.innerHTML = `${totalDurationMinutes}:${String(totalDurationSeconds).padStart(2, '0')}`;
+            finishedTimestamp.value = `${totalDurationMinutes}:${String(totalDurationSeconds).padStart(2, '0')}`;
         } else {
             fetchData();
         }
@@ -43,7 +43,7 @@ const updateProgress = () => {
 onMounted(() => {
     fetchData();
     updateProgress();
-    setInterval(updateProgress, 1000 * 0.9);
+    setInterval(updateProgress, 1000 * 0.5);
     setInterval(fetchData, 1000 * 60);
 });
 </script>
@@ -53,11 +53,11 @@ onMounted(() => {
         <div class="flex flex-col justify-around w-full">
             <h5 class="text-lg block mt-4">{{ spotifyInfo.song }}<span class="text-xs font-semibold ml-1">by {{ spotifyInfo.artist }}</span></h5>
             <div class="flex items-center justify-between mt-4 w-full">
-                <span class="mr-2" ref="currentTimestamp"></span>
+                <span class="mr-2">{{ currentTimestamp }}</span>
                 <div class="bg-white/20 bottom-0 w-full rounded-xl h-1 p-0 m-0">
                     <div ref="progress" class="h-full bg-white rounded-xl"></div>
                 </div>
-                <span class="ml-2" ref="finishedTimestamp"></span>
+                <span class="ml-2">{{ finishedTimestamp }}</span>
             </div>
         </div>
         <img class="w-24 h-24 shadow-2xl" :src="spotifyInfo.album_art_url" alt="">
