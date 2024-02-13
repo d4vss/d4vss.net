@@ -42,6 +42,7 @@
           lanyardData.value = data;
           spotifyInfo.value = data.spotify;
         }
+        updateProgress();
       } catch (error) {}
     };
   
