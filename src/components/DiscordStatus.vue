@@ -1,7 +1,7 @@
 <template>
     <div class="flex justify-between flex-col lg:flex-row">
       <div id="view" class="opacity-0 duration-300 delay-300">
-        <img v-if="avatar_url" :src="avatar_url" class="w-16 h-16 rounded-full">
+        <img v-if="avatar_url" :src="avatar_url" alt="Profile picture" class="w-16 h-16 rounded-full">
         <div v-else class="w-16 h-16"></div>
         <h1 class="mt-2 mb-3">d4vss</h1>
         <p class="!text-white/60 flex items-center m-0 p-0">
@@ -20,7 +20,7 @@
             <span class="ml-2">{{ finishedTimestamp }}</span>
           </div>
         </div>
-        <img class="w-24 h-24 shadow-2xl" :src="spotifyInfo.album_art_url" alt="">
+        <img class="w-24 h-24 shadow-2xl" :src="spotifyInfo.album_art_url" alt="Album image">
       </div>
     </div>
   </template>
@@ -77,7 +77,7 @@
       })();
     });
   
-    const avatar_url = computed(() => lanyardData.value ? `https://cdn.discordapp.com/avatars/627448648833171457/${lanyardData.value.discord_user.avatar}` : null);
+    const avatar_url = computed(() => lanyardData.value ? `https://cdn.discordapp.com/avatars/627448648833171457/${lanyardData.value.discord_user.avatar}.webp` : null);
     const offline = computed(() => lanyardData.value && lanyardData.value.discord_status == "offline");
   </script>
   
