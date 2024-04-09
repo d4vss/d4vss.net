@@ -12,7 +12,8 @@ export default defineConfig({
       mdi: ['language-javascript', 'language-html5', 'language-css3', 'language-python', 'language-csharp', 'language-java', 'language-php', 'vuejs', 'ubuntu', 'microsoft-visual-studio-code', 'microsoft-visual-studio'],
       ph: ['planet-bold'],
       simple_icons: ['astro', 'nuxtdotjs', 'express', 'flask', 'wordpress', 'windows11', 'nginx', 'pterodactyl', 'raspberrypi', 'intellijidea'],
-      octicon: ['repo-24']
+      octicon: ['repo-24'],
+      tabler: ["brand-nextjs"]
     }
   })],
   output: 'server',
