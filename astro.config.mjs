@@ -13,7 +13,7 @@ export default defineConfig({
       ph: ['planet-bold'],
       simple_icons: ['astro', 'nuxtdotjs', 'express', 'flask', 'wordpress', 'windows11', 'nginx', 'pterodactyl', 'raspberrypi', 'intellijidea'],
       octicon: ['repo-24'],
-      tabler: ["brand-nextjs"]
+      tabler: ['brand-nextjs'],
     }
   })],
   output: 'server',
