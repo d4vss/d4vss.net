@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 
-import vercel from '@astrojs/vercel/serverless';
 import tailwind from "@astrojs/tailwind";
 import vue from "@astrojs/vue";
 import icon from "astro-icon";
@@ -13,11 +12,6 @@ export default defineConfig({
       ph: ['planet-bold'],
       simple_icons: ['astro', 'nuxtdotjs', 'express', 'flask', 'wordpress', 'windows11', 'nginx', 'pterodactyl', 'raspberrypi', 'intellijidea'],
       octicon: ['repo-24'],
-      tabler: ['brand-nextjs'],
     }
   })],
-  output: 'server',
-  adapter: vercel({
-    webAnalytics: { enabled: false }
-  }),
 });
